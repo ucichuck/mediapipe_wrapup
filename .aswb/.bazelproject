@@ -1,0 +1,26 @@
+directories:
+  # read project settings, e.g., .bazelrc
+  .
+  -mediapipe/objc
+  -mediapipe/examples/ios
+
+targets:
+  //mediapipe/examples/android/...:all
+  //mediapipe/java/...:all
+
+android_sdk_platform: android-29
+
+sync_flags:
+  --host_crosstool_top=@bazel_tools//tools/cpp:toolchain
+  
+additional_languages:
+  # Uncomment any additional languages you want supported
+  # c
+  # dart
+  # kotlin
+  # python
+
+
+# Please uncomment an android-SDK platform. Available SDKs are:
+# android_sdk_platform: android-21
+# android_sdk_platform: android-22

@@ -17,7 +17,7 @@ licenses(["notice"])  # Apache 2.0
 # Basic library common across example apps.
 android_library(
     name = "basic_lib",
-    srcs = glob(["*.java"]),
+    srcs = ["MainActivity.java"],
     manifest = "AndroidManifest.xml",
     resource_files = glob(["res/**"]),
     visibility = ["//visibility:public"],
@@ -32,6 +32,13 @@ android_library(
         "@maven//:androidx_concurrent_concurrent_futures",
         "@maven//:com_google_guava_guava",
     ],
+)
+
+# Basic library of ucichuck experiment.
+android_library(
+    name = "ucichuck_lib",
+    srcs = ["MainActivityZChuck.java"],
+    deps = [],
 )
 
 # Manifest common across example apps.
@@ -80,4 +87,20 @@ android_binary(
         ":basic_lib",
         ":mediapipe_jni_lib",
     ],
+)
+
+android_binary(
+    name = "ucichuck",
+    manifest = "AndroidManifest.xml",
+    manifest_values = {
+        "applicationId": "ucichuck.experiment",
+        "appName" : "Hello World",
+        "mainActivity": ".MainActivity2",
+        "cameraFacingFront": "True",
+        "binaryGraphName": "mobile_gpu.binarypb",
+        "inputVideoStreamName": "input_video",
+        "outputVideoStreamName": "output_video",
+        "flipFramesVertically": "True",
+    }
+    deps = [":ucichuck_lib",],
 )

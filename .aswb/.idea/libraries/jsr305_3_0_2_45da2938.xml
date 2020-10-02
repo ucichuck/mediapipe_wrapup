@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jsr305-3.0.2_45da2938">
+    <CLASSES>
+      <root url="jar:///private/var/tmp/_bazel_chuck/b7ad6d807152dc1d9d150f6d326ad540/external/maven/v1/https/jcenter.bintray.com/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
